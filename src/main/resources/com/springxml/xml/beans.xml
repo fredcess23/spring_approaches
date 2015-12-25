@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!-- Uncomment when you want to run the example using the xml approach -->
+<!-- Start 
+
+<bean id="jugador1" class="com.beans.springxml.Jugador">
+	<property name="id" value="1"></property>
+	<property name="nombre" value="Cesar Ca"></property>
+	<property name="equipo" ref="barcelona"></property>
+	<property name="camiseta" ref="camiseta1"></property>
+	
+</bean>
+
+
+<bean id="barcelona" class="com.beans.springxml.Barcelona"></bean>
+<bean id="juventus" class="com.beans.springxml.Juventus"></bean>
+
+<bean id="camiseta1" class="com.beans.springxml.Camiseta">
+	<property name="id" value="1"></property>
+	<property name="numero" value="10"></property>
+	<property name="marca" ref="marca1"></property>
+</bean>
+
+<bean id="marca1" class="com.beans.springxml.Marca">
+	<property name="numero" value="1"></property>
+	<property name="nombre" value="Nike"></property>
+
+</bean>
+
+End--> 
+
+
+<!-- Uncomment when you want to run the example using the annotation approach -->
+<!-- Start  
+
+<bean id="jugador2" class="com.beans.annotationxml.Jugador2">
+	<property name="id" value="1"></property>
+	<property name="nombre" value="Cesar Ca"></property>
+</bean>
+	
+<context:component-scan base-package="com.beans"></context:component-scan>
+
+End-->
+
+
+<!-- Example of spring connection (spring handle the DataSource -->
+
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://localhost:3306/ligamx"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="daysyman"></property>
+</bean>
+
+<context:component-scan base-package="com.maranatha"></context:component-scan>
+
+</beans>
