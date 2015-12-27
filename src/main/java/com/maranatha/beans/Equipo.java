@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Marca {
-	
-	@Value("6")
-	private int id;
-	@Value("Fila")
-	private String nombre;
+public class Equipo {
+
+	@Value("1")
+	int id;
+	@Value("Barcelona")
+	String nombre;
 	
 	public int getId() {
 		return id;
@@ -17,7 +17,6 @@ public class Marca {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
 	public String getNombre() {
 		return nombre;
 	}

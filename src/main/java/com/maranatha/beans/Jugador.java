@@ -1,10 +1,19 @@
 package com.maranatha.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Jugador {
 
+	@Value("2")
 	private int id;
+	@Value("Neymar")
 	private String nombre;
-	private IEquipo equipo;
+	@Autowired
+	private Equipo equipo;
+	@Autowired
 	private Camiseta camiseta;
 	
 	public int getId() {
@@ -19,10 +28,10 @@ public class Jugador {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public IEquipo getEquipo() {
+	public Equipo getEquipo() {
 		return equipo;
 	}
-	public void setEquipo(IEquipo equipo) {
+	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
 	}
 	public Camiseta getCamiseta() {

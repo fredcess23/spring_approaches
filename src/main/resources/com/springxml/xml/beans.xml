@@ -48,14 +48,16 @@ End-->
 End-->
 
 
-<!-- Example of spring connection (spring handle the DataSource -->
+<!-- Example of spring connection (spring handles the DataSource -->
 
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-	<property name="url" value="jdbc:mysql://localhost:3306/ligamx"></property>
-	<property name="username" value="root"></property>
-	<property name="password" value="daysyman"></property>
+	<property name="url" value="${url}"></property>
+	<property name="username" value="${user}"></property>
+	<property name="password" value="${password}"></property>
 </bean>
+
+<context:property-placeholder location="classpath:valores.properties" />
 
 <context:component-scan base-package="com.maranatha"></context:component-scan>
 
